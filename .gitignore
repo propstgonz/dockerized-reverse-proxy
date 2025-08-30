@@ -1,2 +1,2 @@
 # Ignorar certs para evitar funnys
-/certs/*
+certs/*

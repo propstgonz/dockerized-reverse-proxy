@@ -1,4 +1,6 @@
 # For docker compose routing through traefik
+    networks:
+      - "traefik-net"
 
     labels:
       - "traefik.enable=true"
@@ -6,3 +8,7 @@
       - "traefik.http.routers.[service].entrypoints=websecure"
       - "traefik.http.routers.[service].tls=true"
       - "traefik.http.services.[service].loadbalancer.server.port=[ServicePort]"
+
+networks:
+  traefik-net:
+    external: true

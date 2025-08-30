@@ -1,0 +1,8 @@
+# For docker compose routing through traefik
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.[service].rule=Host(`[subdomain.domain.ccTLD`)"
+      - "traefik.http.routers.[service].entrypoints=websecure"
+      - "traefik.http.routers.[service].tls=true"
+      - "traefik.http.services.[service].loadbalancer.server.port=[ServicePort]"

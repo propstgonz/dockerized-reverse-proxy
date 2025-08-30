@@ -1,0 +1,15 @@
+entryPoints:
+  web:
+    address: ":80"
+  websecure:
+    address: ":443"
+
+providers:
+  docker:
+    exposedByDefault: true
+  file:
+    directory: /etc/traefik/dynamic_conf
+    watch: true
+
+api:
+  insecure: true
